@@ -8,19 +8,27 @@ function diffTime(date){
     return (hours > 24 ? `${Math.ceil(hours/24)}d` : `${hours}h`)
 }
 
-export default function Grid({jobs}){
+export default function Grid({jobs, onJobClick}){
+
+    function onClickEvent(id){
+        console.log('createGrid',id)
+        onJobClick(id)
+    }
+
     return(
         <ul className="grid space-around">
             {jobs.map((value, index)=>{
                 const {id, type, url, created_at, company, company_url, location, title, description, how_to_apply, company_logo} = value
                 return (
                     
-                    <li key='url' className="job bg-light">
+                    <li key={url} className="job bg-light" onClick={()=>onClickEvent(id)}>
+                        <a href={url} target='_blank' className="link">
                         <img src={company_logo} className="avatar" alt={company} />
                         <p className='light-text center-text'>{`${diffTime(created_at)} ago \u2022 ${type}`} </p>
                         <h3 className="job-title center-text">{title}</h3>
                         <p className='light-text center-text'>{company}</p>
                         <h3 className='location'>{location}</h3>
+                        </a>
                     </li>
                 )
             })}

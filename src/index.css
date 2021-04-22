@@ -91,3 +91,46 @@ body, * {
 .location{
   color: #5865E0;
 }
+
+.job-form{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #FFFFFF;
+}
+.job-form input[type='text']{
+  display: inline-block;
+  padding: 17px;
+  width: 300px;
+  border: 1px solid #f5f5f5;
+  font-size: 13px;
+  color: gray;
+  outline: 0;
+}
+.last-input{
+  display: inline-block;
+  padding: 17px;
+  font-weight: bold;
+  width: 270px;
+  border-left: 1px solid #f5f5f5;
+  font-size: 13px;
+  background: #FFFFFF;
+  outline: 0;
+}
+.submit-button{
+  display: inline-block;
+  border-radius: 2px;
+  border: 1px solid #f5f5f5;
+  padding: 10px;
+  background-color: #5865E0;
+  color: #f5f5f5;
+  outline: 0;
+  margin-left: 80px;
+}
+
+.link{
+  text-decoration: none;
+}
+.link:not(.location){
+  color: black;
+}
