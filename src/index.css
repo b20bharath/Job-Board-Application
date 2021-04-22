@@ -47,9 +47,19 @@ body, * {
 }
 .display-list{
   display: block;
-  border: 1px solid black;
+  
   margin: 0 auto;
   max-width: 1500px;
+  transform: translate(0,-25px);
+  background: inherit;
+  background-size: cover;
+}
+
+.display-list-job{
+  display: block;
+  
+  margin: 0 auto;
+  max-width: 750px;
   transform: translate(0,-25px);
   background: inherit;
   background-size: cover;
@@ -153,8 +163,8 @@ body, * {
 
 .company-name{
   font-weight: bold;
-  font-size: 30px;
-  margin: 0;
+  font-size: 20px;
+  margin: 5px 0 0 0;
   width: 100%
 }
 
@@ -192,4 +202,49 @@ body, * {
   text-align: center;
   font-weight: bold;
   border-radius: 5px;
+}
+
+.apply-link-sm{
+  display: inline-block;
+  background-color: #5865E0;
+  color: #F5F6F8;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.job-d{
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: #FFFFFF;
+  margin-top: 20px;
+}
+.job-d p,h3{
+  margin: 0 auto;
+}
+
+.job-apply{
+  border-radius: 4px;
+  margin-top: 20px;
+  display: block;
+  max-width: 100%;
+  background: #5865E0;
+  color: #F5F6F8;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.job-details{
+  border-radius: 4px;
+  display: block;
+  max-width: 100%;
+  background: #FFFFFF;
+  padding: 20px;
 }

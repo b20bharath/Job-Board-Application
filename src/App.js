@@ -32,11 +32,17 @@ function App() {
     setJob(data)
     setJobClick(true)
   }
+  const handleOnReturn = (flag)=>{
+    if(flag === true){
+      setJob(false)
+      setJobClick(false)
+    }
+  }
 
   return (
     <Container class="conatiner-1">
       <NavBar />
-      {job && jobClick ? <div className="display-list"><JobDescription job={job}/></div>:
+      {job && jobClick ? <div className="display-list-job"><JobDescription job={job} onReturn={handleOnReturn}/></div>:
       <div className="display-list">
         <SearchJobs params={params} onParamChange={handleParamChange} />
         { loading && <h3 className="loading">Loading...</h3>}
