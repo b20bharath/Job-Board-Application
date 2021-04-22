@@ -17,7 +17,6 @@ html,body {
   display: flex;
   flex-direction: row;
   gap: 50px;
-
   max-width: 100%;
   padding: 15px 50px;
   color: #F5F6F8;
@@ -36,18 +35,24 @@ html,body {
 body, * {
   box-sizing: border-box;
 }
+.job img{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transform: translate(20px, -35px);
+}
+
 .container-1{
   background-color: inherit;
 }
 .display-list{
   display: block;
   border: 1px solid black;
-  margin: -25px auto 0px auto;
+  margin: 0 auto;
   max-width: 1500px;
-  z-index: 1;
+  transform: translate(0,-25px);
   background: inherit;
-  background-size: 100% 100%;
-
+  background-size: cover;
 }
 
 .loading{
@@ -55,8 +60,34 @@ body, * {
   text-align: center;
   font-weight: bold;
   font-size: 25px;
-
 }
 
+.space-around{
+  justify-content: space-around;
+}
 
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
 
+.light-text{
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.bg-light{
+  background: #FFFFFF;
+  border-radius: 3px;
+}
+
+.job{
+  
+  margin: 10px 0;
+  width: 250px;
+  padding: 20px;
+}
+.location{
+  color: #5865E0;
+}
