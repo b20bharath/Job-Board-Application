@@ -10,9 +10,9 @@ function diffTime(date){
 
 export default function Grid({jobs, onJobClick}){
 
-    function onClickEvent(id){
-        console.log('createGrid',id)
-        onJobClick(id)
+    function onClickEvent(data){
+        console.log('createGrid',data)
+        onJobClick(data)
     }
 
     return(
@@ -21,7 +21,7 @@ export default function Grid({jobs, onJobClick}){
                 const {id, type, url, created_at, company, company_url, location, title, description, how_to_apply, company_logo} = value
                 return (
                     
-                    <li key={url} className="job bg-light" onClick={()=>onClickEvent(id)}>
+                    <li key={url} className="job bg-light" onClick={()=>onClickEvent(value)}>
                         <a href={url} target='_blank' className="link">
                         <img src={company_logo} className="avatar" alt={company} />
                         <p className='light-text center-text'>{`${diffTime(created_at)} ago \u2022 ${type}`} </p>
