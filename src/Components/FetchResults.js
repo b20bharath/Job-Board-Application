@@ -11,41 +11,39 @@ const reducer = (state, action) => {
         case REQUEST:
             return { loading: true, jobs: []}
         case GET_DATA:
-            return {...state, loading: false, jobs: action.payload.jobs}
+            return {...state, loading: false, jobs: action.information.jobs}
         case ERROR:
-            return {...state, loading: false, error: action.payload.error, jobs: []}
+            return {...state, loading: false, error: action.information.error, jobs: []}
         case NEXT_PAGE:
-            return {...state, hasNextPage: action.payload.hasNextPage}
+            return {...state, checkNextPage: action.information.checkNextPage}
         default:
             return state
     }
 }
 
-export default function FetchJobs(params, page) {
+export default function useFetchJobs(params, page) {
     const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true})
-
     useEffect(() => {
         const cancelToken1 = axios.CancelToken.source()
+        const cancelToken2 = axios.CancelToken.source()
         dispatch({ type: REQUEST})
         axios.get(BASE_URL, {
             cancelToken: cancelToken1.token,
             params: { markdown: true, page, ...params}
         })
-        .then(res => dispatch({ type: GET_DATA, payload: { jobs: res.data }}))
+        .then(res => dispatch({ type: GET_DATA, information: { jobs: res.data }}))
         .catch(e => {
             if(axios.isCancel(e)) return;
-            dispatch({ type: ERROR, payload: { error: e }})
+            dispatch({ type: ERROR, information: { error: e }})
         })
-
-        const cancelToken2 = axios.CancelToken.source()
         axios.get(BASE_URL, {
             cancelToken: cancelToken2.token,
             params: { markdown: true, page: page + 1, ...params}
         })
-        .then(res => dispatch({ type: NEXT_PAGE, payload: { hasNextPage: res.data.length !== 0 }}))
+        .then(res => dispatch({ type: NEXT_PAGE, information: { checkNextPage: res.data.length !== 0 }}))
         .catch(e => {
             if(axios.isCancel(e)) return;
-            dispatch({ type: ERROR, payload: { error: e }})
+            dispatch({ type: ERROR, information: { error: e }})
         })
 
         return () => {
