@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap'
 import useFetchJobs from './Components/FetchResults'
 import Grid from './Components/CreateGird'
 import SearchJobs from './Components/SearchJobs'
@@ -68,7 +67,7 @@ export default function App() {
   }
 
   return (
-    <Container class="conatiner-1">
+    <div class="conatiner-1">
       {job && jobClick ? <div className="display-list-job"><JobDescription job={job} onReturn={handleOnReturn}/></div>:
       <div className="display-list">
         <SearchJobs params={params} onParamChange={handleParamChange} />
@@ -79,7 +78,7 @@ export default function App() {
         
       </div>}
       
-    </Container>
+    </div>
   );
 }
 
