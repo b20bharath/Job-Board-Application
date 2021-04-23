@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
-
+import { ThemeConsumer } from '../theme'
 export default function SearchJobs({params,onParamChange}){
     const [formData, setFormData] = useState({
         title: params.title,
@@ -24,17 +24,22 @@ export default function SearchJobs({params,onParamChange}){
     }
 
     return (
-        <form className='job-form flex-display' onSubmit={onSubmit}>
-            <input type='text' name='title' className="job-title-input" placeholder="title" onChange={onChange}/>
-            <input type='text' name='company' className="job-company-input" placeholder="company" onChange={onChange}/>
-            <input type='text' name='skill' className="job-skill-input" placeholder="skill" onChange={onChange}/>
-            <input type='text' name='location' className="job-location-input" placeholder="location" onChange={onChange}/>
-            <div className='last-input'>
-            <label htmlFor='full_time'>Full Time  </label>
-            <input type='checkbox' id='full_time' name='full_time' className="job-fulltime-input" onChange={onChange}/>
-            <input type='submit' className='submit-button' value='Search'/>
-            </div>
-        </form>
+        <ThemeConsumer>
+            {({theme})=>(
+                <form className='job-form flex-display ' onSubmit={onSubmit}>
+                <input type='text' name='title' className={`job-title-input border-${theme} bg-${theme}`} placeholder="title" onChange={onChange}/>
+                <input type='text' name='company' className={`job-company-input border-${theme} bg-${theme}`} placeholder="company" onChange={onChange}/>
+                <input type='text' name='skill' className={`job-skill-input border-${theme} bg-${theme}`} placeholder="skill" onChange={onChange}/>
+                <input type='text' name='location' className={`job-location-input border-${theme} bg-${theme}`} placeholder="location" onChange={onChange}/>
+                <div className={`last-input border-${theme} bg-${theme}`}>
+                <label htmlFor='full_time'>Full Time  </label>
+                <input type='checkbox' id='full_time' name='full_time' className="job-fulltime-input" onChange={onChange}/>
+                <input type='submit' className='submit-button' value='Search'/>
+                </div>
+                </form>
+            )}
+        </ThemeConsumer>
+
     )
 }
 
