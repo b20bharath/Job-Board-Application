@@ -293,6 +293,15 @@ body, * {
   border-radius: 5px;
   top: 7px;
 }
+.job-d2{
+  padding: 30px 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
 
 .job-d1{
   padding: 30px 20px;
