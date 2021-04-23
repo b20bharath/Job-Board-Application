@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import NavBar from './Components/NavBar'
 import reportWebVitals from './reportWebVitals';
-import {ThemeProvider, ThemeConsumer} from './theme'
+import {ThemeProvider} from './theme'
 class JobList extends React.Component{
   constructor(props){
       super(props)
