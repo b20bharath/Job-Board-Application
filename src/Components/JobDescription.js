@@ -30,7 +30,7 @@ export default function JobDescription({job,onReturn}){
                 </div>
                 <a href={company_url} className='company-link'>Company Site</a>
             </div>
-            <div className={`job-d bg-${theme}`}>
+            <div className={`job-d2 bg-${theme}`}>
                 <div>
                     <p className='light-text center-text'>{`${diffTime(created_at)} ago \u2022 ${type}`} </p>
                     <h3 className="job-title center-text">{title}</h3>
