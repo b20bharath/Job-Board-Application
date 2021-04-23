@@ -45,24 +45,27 @@ export default function JobDescription({job,onReturn}){
                 <ReactMarkdown>{description}</ReactMarkdown>
             </div>
             <div className='job-apply'>
+                <h2> How to Apply</h2>
                 <ReactMarkdown>{how_to_apply}</ReactMarkdown>
             </div>
+            <div className='adjust'>
             <div className={`job-d bg-${theme}`}>
                 <div>
-                    <h3 className="job-title center-text">{title}</h3>
+                    <h3 className="job-title ">{title}</h3>
                     <h3 className='location'>{location}</h3>
                 </div>
                 <div>
-                <a href={url} className='apply-link-sm'> Apply Now</a>
+                <a href={url} className='apply-link-sm1'> Apply Now</a>
                 </div>
             </div>
-            <div className={`job-d bg-${theme}`}>
+            <div className={`job-d1 bg-${theme}`}>
                 <div>
                     <h3 className="job-title center-text">Go back to jobs</h3>
                 </div>
                 <div>
-                <a href='#' onClick={()=>onReturnClick()} className='apply-link-sm'> Go Back</a>
+                <a href='#' onClick={()=>onReturnClick()} className='apply-link-sm1'> Go Back</a>
                 </div>
+            </div>
             </div>
             </React.Fragment>
             )}

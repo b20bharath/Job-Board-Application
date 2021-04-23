@@ -93,14 +93,21 @@ body, * {
 }
 
 .bg-light{
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   border-radius: 3px;
   color: black;
 }
 
 .bg-dark{
-  background: #19212D;
+  background-color: #19212D;
   color: #FFFFFF;
+}
+
+.head{
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 30px;
+  color: #5865E0;
 }
 
 .job{
@@ -121,7 +128,7 @@ body, * {
 .job-form input[type='text']{
   display: inline-block;
   padding: 17px;
-  width: 300px;
+  width: 235px;
   
   font-size: 13px;
   outline: 0;
@@ -129,6 +136,10 @@ body, * {
 .checkbox{
   visibility: hidden;
   display: none;
+}
+.flex-display{
+  display: flex;
+  flex-wrap: wrap;
 }
 .check{
   position: relative;
@@ -173,9 +184,13 @@ body, * {
   display: inline-block;
   padding: 17px;
   font-weight: bold;
-  width: 270px;
+  width: 235px;
   font-size: 13px;
   outline: 0;
+}
+.adjust{
+  display: flex;
+  flex-direction: row;
 }
 .submit-button{
   display: inline-block;
@@ -185,7 +200,7 @@ body, * {
   background-color: #5865E0;
   color: #f5f5f5;
   outline: 0;
-  margin-left: 80px;
+  margin-left: 40px;
 }
 
 .link{
@@ -253,6 +268,7 @@ body, * {
   border-radius: 5px;
 }
 
+
 .apply-link-sm{
   display: inline-block;
   background-color: #5865E0;
@@ -265,7 +281,28 @@ body, * {
   border-radius: 5px;
   margin-top: 10px;
 }
+.apply-link-sm1{
+  display: inline-block;
+  background-color: #5865E0;
+  color: #F5F6F8;
+  padding: 7px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  top: 7px;
+}
 
+.job-d1{
+  padding: 30px 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 40%;
+}
 .job-d{
   padding: 20px;
   border-radius: 4px;
@@ -273,9 +310,16 @@ body, * {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 20px;
+  width: 60%;
+}
+.job-d{
+  margin-right: 5px;
 }
 .job-d p,h3{
   margin: 0 auto;
+}
+.center-text{
+  margin-top: 3px;
 }
 
 .job-apply{
@@ -302,6 +346,7 @@ body, * {
   padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -309,4 +354,48 @@ body, * {
   display: block;
   width: 100%;
   padding: 20px;
+}
+
+@media screen and (max-width: 650px){
+  .nav-bar{
+    border-bottom-left-radius: 0px;
+  }
+  .job-form input[type='text'],.last-input{
+    margin-left: 85px;
+  }
+  .display-list,.display-list-job{
+    width: 380px;
+  }
+}
+@media screen and (min-width: 650px) and (max-width: 980px){
+  .nav-bar{
+    border-bottom-left-radius: 30px;
+  }
+  .job-form input[type='text'],.last-input{
+    margin-left: 45px;
+  }
+  .display-list,.display-list-job{
+    width: 580px;
+  }
+}
+@media screen and (min-width: 980px) and (max-width: 1300px){
+  .nav-bar{
+    border-bottom-left-radius: 45px;
+  }
+  .job-form input[type='text'],.last-input{
+    margin-left: 45px;
+  }
+  .display-list,.display-list-job{
+    width: 900px;
+  }
+
+}
+@media screen and (min-width: 1300px){
+  .nav-bar{
+    border-bottom-left-radius: 0px;
+  }
+  .display-list,.display-list-job{
+    width: 1200px;
+  }
+
 }
