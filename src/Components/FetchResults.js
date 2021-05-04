@@ -31,7 +31,9 @@ export default function useFetchJobs(params, page) {
             cancelToken: cancelToken1.token,
             params: { markdown: true, page, ...params}
         })
-        .then(res => dispatch({ type: GET_DATA, information: { jobs: res.data }}))
+        .then(res => {
+            console.log(res.data)
+            return dispatch({ type: GET_DATA, information: { jobs: res.data }})})
         .catch(e => {
             if(axios.isCancel(e)) return;
             dispatch({ type: ERROR, information: { error: e }})

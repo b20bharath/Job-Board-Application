@@ -5,7 +5,7 @@ import {ThemeConsumer} from '../theme'
 export default function JobDescription({job,onReturn}){
 
     const {id, type, url, created_at, company, company_url, location, title, description, how_to_apply, company_logo} = job
-
+    console.log(company)
     function diffTime(date){
         const date1 = new Date(Date.now())
         const date2 = new Date(date);
@@ -50,7 +50,7 @@ export default function JobDescription({job,onReturn}){
             </div>
             <div className='adjust'>
             <div className={`job-d bg-${theme}`}>
-                <div>
+                <div className='job-d-inf'>
                     <h3 className="job-title ">{title}</h3>
                     <h3 className='location'>{location}</h3>
                 </div>
